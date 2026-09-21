@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BergerOS — Venda mais veículos com inteligência artificial</title>
+<meta name="description" content="Venda mais veículos com uma infraestrutura de crescimento com inteligência artificial, voltada para lojas multimarcas e revendas de veículos. Consultoria BergerOS, Itajaí/SC.">
+<meta property="og:title" content="BergerOS — Venda mais veículos com inteligência artificial">
+<meta property="og:description" content="Infraestrutura de crescimento com inteligência artificial para lojas multimarcas e revendas de veículos. Diagnóstico de 30 minutos, sem compromisso.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bergeros.com.br/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://www.bergeros.com.br/bergeros-logo-1600.png">
+<meta property="og:image:width" content="1652">
+<meta property="og:image:height" content="687">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.bergeros.com.br/">
+<link rel="icon" href="bergeros-icone-32.png" sizes="32x32">
+<link rel="icon" href="bergeros-icone-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="bergeros-icone-180.png">
+<meta name="theme-color" content="#000000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Analytics / pixel: colar aqui quando existir. Hoje a página não coleta nada. -->
+<style>
+/* ── tokens da marca (BRIEFING-SITE.md §5 · design-system.json bloco "vigente") ── */
+:root{
+  --preto:#000; --sup:#0c0c0c; --sup2:#080808; --linha:#1c1c1c; --linha2:#2a2a2a;
+  --texto:#f4f4f4; --mudo:#8b8b8b; --mudo2:#6a6a6a; --cor:#00D1B2; --cor-escura:#0E8F7C; --ouro:#F2C94C;
+  --wa:#14201a; --wa2:#15161a;
+  --display:'Archivo','Segoe UI',sans-serif;
+  --corpo:'Inter','Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--corpo);background:var(--preto);color:var(--texto);line-height:1.62;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+section{padding:104px 0;position:relative;border-bottom:1px solid var(--linha)}
+section[id]{scroll-margin-top:84px}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.8px}
+h2{font-size:clamp(30px,4.4vw,52px);font-weight:800;line-height:1.06;letter-spacing:-1.3px;max-width:24ch;margin:18px 0 0}
+h3{font-size:18px;font-weight:700;margin-bottom:8px;letter-spacing:-.3px;line-height:1.3}
+p{color:var(--mudo)}
+strong{color:var(--texto);font-weight:600}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.amb{color:var(--cor)}
+.ouro{color:var(--ouro);font-style:normal} /* decisão dele 17/09 12h30: amarelo só em letra, UMA palavra por seção */
+::selection{background:var(--cor);color:#000}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--cor);outline-offset:3px}
+
+/* cabeçalho de seção: etiqueta à esquerda, numeração do documento à direita */
+.cab{display:flex;justify-content:space-between;align-items:baseline;gap:20px}
+.eyebrow{display:inline-block;font-family:var(--mono);font-size:11.5px;letter-spacing:2.4px;font-weight:500;color:var(--cor);text-transform:uppercase}
+.eyebrow::before{content:"";display:inline-block;width:18px;height:1px;background:var(--cor);vertical-align:middle;margin-right:10px;opacity:.8}
+.num{font-family:var(--mono);font-size:11.5px;letter-spacing:2px;color:var(--mudo);white-space:nowrap}
+.intro{font-size:17px;max-width:58ch;margin-top:18px}
+
+/* ── cabeçalho ── */
+header{padding:12px 0;position:sticky;top:0;background:var(--preto);z-index:50;border-bottom:1px solid var(--linha)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.marca{display:flex;align-items:center;color:var(--texto);text-decoration:none;padding:6px 0;min-height:44px}
+.marca svg{display:block;height:40px;width:auto}
+.marca .sig{color:var(--cor)}
+.marca .word{fill:var(--texto)}
+nav{display:flex;gap:28px;font-family:var(--mono);font-size:12px;letter-spacing:.6px}
+nav a{color:var(--mudo);text-decoration:none;transition:color .2s}
+nav a:hover{color:var(--texto)}
+.cta{display:inline-block;background:var(--texto);color:#000;font-weight:600;padding:12px 26px;border-radius:4px;text-decoration:none;font-size:14.5px;transition:background .2s,transform .2s;white-space:nowrap}
+.cta:hover{background:#fff;transform:translateY(-1px)}
+.cta.grande{font-size:16px;padding:16px 38px}
+.cta.fantasma{background:transparent;color:var(--texto);border:1px solid var(--linha2)}
+.cta.fantasma:hover{border-color:var(--cor);color:var(--cor);background:transparent}
+
+/* ── topo ── */
+.hero{padding:80px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1.06fr .94fr;gap:56px;align-items:center}
+.hero .wrap>*{min-width:0}
+.hero h1{font-size:clamp(34px,3.5vw,46px);font-weight:800;line-height:1.04;letter-spacing:-.03em;margin:18px 0 22px}
+.hero .lede{font-size:18px;max-width:46ch;margin-bottom:32px;line-height:1.6}
+.hero h1,.hero .lede{overflow-wrap:break-word}
+.selos{display:grid;grid-template-columns:1fr 1fr;margin-top:34px;border-top:1px solid var(--linha)}
+.selo{font-size:12.5px;color:var(--mudo);padding:16px 18px 0 0;margin-right:18px;border-right:1px solid var(--linha);line-height:1.45}
+.selo:last-child{border-right:0;margin-right:0;padding-right:0}
+.selo+.selo{padding-left:0}
+.selo b{display:block;color:var(--texto);font-family:var(--mono);font-weight:500;font-size:18px;margin-bottom:2px}
+
+/* régua — o motivo de medição da marca, em SVG, sem degradê */
+.regua{display:block;width:100%;height:14px;margin-top:26px;color:var(--linha2)}
+
+/* aparelho: moldura em TRÊS camadas de linha (banda externa, vão, tela OLED preta). Sem sombra, sem gradiente — a luz vem de linha mais clara em cima e mais escura embaixo */
+.cena{display:flex;flex-direction:column;align-items:flex-end}
+.legenda{font-size:12px;color:var(--mudo);margin:0 0 16px;font-family:var(--mono);text-align:right}
+.aparelho{position:relative;width:308px;max-width:100%;aspect-ratio:9/19.5;min-height:0;height:auto;background:#0b0b0b;border:2px solid #333;border-top-color:#404040;border-bottom-color:#262626;border-radius:50px;padding:11px}
+.aparelho::before{content:"";position:absolute;inset:4px;border:1px solid #1a1a1a;border-radius:45px;pointer-events:none}
+.bt{position:absolute;width:4px;border-radius:2px;background:#333;border-top:1px solid #4a4a4a}
+.bt.v1{left:-5px;top:118px;height:26px}
+.bt.v2{left:-5px;top:160px;height:50px}
+.bt.v3{left:-5px;top:220px;height:50px}
+.bt.pw{right:-5px;top:176px;height:80px}
+.ilha{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:100px;height:29px;border-radius:15px;background:#000;border:1px solid #1e1e1e;z-index:3}
+.ilha::after{content:"";position:absolute;right:9px;top:50%;width:11px;height:11px;margin-top:-5.5px;border-radius:50%;background:#0d0d0d;border:1px solid #232323}
+.tela{height:100%;background:#000;border:1px solid #141414;border-radius:40px;overflow:hidden;display:flex;flex-direction:column}
+.status{display:flex;align-items:center;justify-content:space-between;padding:20px 24px 0;font-family:var(--mono);font-size:11px;color:var(--mudo)}
+.glifos{display:flex;align-items:center;gap:6px}
+.glifos svg,.voltar{display:block}
+.cabeca{display:flex;align-items:center;gap:10px;margin-top:16px;padding:14px 16px 13px;border-bottom:1px solid #161616;background:#070707}
+.voltar{color:var(--mudo);flex:none}
+.av{width:32px;height:32px;border-radius:50%;border:1px solid var(--linha2);display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--mudo);flex:none}
+.nome{font-size:14px;font-weight:600;line-height:1.35}
+.online{font-size:11px;color:var(--mudo);display:flex;align-items:center;gap:5px}
+.online::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cor);flex:none}
+.chat{display:flex;flex-direction:column;gap:5px;padding:8px 12px 10px;flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;-ms-overflow-style:none}
+.chat::-webkit-scrollbar{display:none}
+.bolha{flex:none;max-width:84%;padding:9px 12px;font-size:13.5px;line-height:1.5;opacity:0;transform:translateY(6px);animation:sobe .4s ease forwards;border:1px solid var(--linha);border-radius:14px}
+.bolha.ele{background:#161616;border-color:#222;align-self:flex-start;border-bottom-left-radius:4px}
+.bolha.nos{background:#122019;align-self:flex-end;border-color:#1c3027;border-bottom-right-radius:4px}
+.bolha .h{display:block;font-size:10px;color:var(--mudo);margin-top:4px;font-family:var(--mono);text-align:right}
+@keyframes sobe{to{opacity:1;transform:none}}
+.pe-cena{font-family:var(--mono);font-size:12px;color:var(--mudo);margin-top:18px;text-align:right;max-width:300px;line-height:1.55}
+
+/* ── dores ── */
+.dores{display:grid;grid-template-columns:1.2fr .8fr;gap:1px;background:var(--linha);border:1px solid var(--linha);margin-top:44px;border-radius:4px;overflow:hidden}
+.dor{background:var(--sup2);padding:32px}
+.dor.larga{grid-column:1 / -1}
+.dor.virada .carimbo{color:var(--cor)}
+.dor p{font-size:15px;margin-top:6px;max-width:62ch}
+
+/* ── prévia 02 v2: ênfase nos quadros ── */
+.dores2 .carimbo.forte{color:var(--texto);font-size:clamp(44px,7vw,76px);margin-bottom:22px}
+.dores2 .dor-lembrete .carimbo.forte{color:var(--mudo)}
+.dores2 h3{margin-top:22px}
+.balao{max-width:300px;background:#151515;border:1px solid var(--linha2);border-radius:14px 14px 14px 3px;padding:10px 14px;font-size:14px;color:var(--texto);line-height:1.4}
+.balao em{display:block;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.6px;color:var(--mudo);margin-top:6px}
+.tempo{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;margin-top:18px;max-width:560px}
+.tempo .pt{font-family:var(--mono);font-size:11px;color:var(--mudo);line-height:1.35}
+.tempo .pt b{display:block;font-weight:400;font-size:15px;color:var(--texto)}
+.tempo .tracho{position:relative;height:1px;background:var(--linha2)}
+.tempo .tracho::before,.tempo .tracho::after{content:"";position:absolute;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--texto)}
+.tempo .tracho::before{left:-2px}.tempo .tracho::after{right:-2px;background:var(--mudo2)}
+.tempo .tracho i{position:absolute;left:50%;top:8px;transform:translateX(-50%);white-space:nowrap;font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.8px;color:var(--mudo)}
+.tempo{margin-bottom:8px;padding-bottom:16px}
+.dores2 .carimbo.forte.menor{font-size:clamp(38px,5.2vw,58px);color:var(--texto)}
+.balao.meu{background:#0f1f19;border-color:#1f3a30;border-radius:14px 14px 3px 14px;margin-left:auto}
+.depois{list-style:none;margin-top:14px;max-width:300px}
+.depois li{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:baseline;font-family:var(--mono);font-size:12.5px;color:var(--texto);padding:7px 0;border-top:1px solid var(--linha)}
+.depois li:first-child{border-top:0}
+.depois li b{font-weight:400;color:var(--mudo);text-transform:uppercase;font-size:11px;letter-spacing:1px}
+.depois li:last-child{color:var(--mudo)}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linha);border:1px solid var(--linha2);border-radius:4px;overflow:hidden;max-width:580px}
+.duas>div{background:#0f0f0f;padding:14px 16px}
+.duas .rot{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--mudo);padding-bottom:10px;border-bottom:1px solid var(--linha);margin-bottom:6px}
+.papo p{font-size:13px;line-height:1.4;margin-top:6px;max-width:none}
+.papo .q{color:var(--texto)}
+.papo .r{font-family:var(--mono);font-size:12px;color:var(--mudo);margin-top:2px;margin-bottom:8px}
+.painel .rot{color:var(--cor);border-bottom-color:var(--linha)}
+.kpi{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;padding:9px 0;border-top:1px solid var(--linha)}
+.kpi:first-of-type{border-top:0}
+.kpi span{font-size:13px;color:var(--texto)}
+.kpi b{font-family:var(--mono);font-weight:400;font-size:11.5px;color:var(--mudo);text-align:right;white-space:nowrap}
+@media (max-width:980px){.tempo .tracho i{font-size:10px}.balao,.duas{max-width:none}}
+@media (max-width:720px){.duas{grid-template-columns:1fr}}
+.carimbo{font-family:var(--mono);font-size:clamp(38px,6vw,64px);font-weight:400;line-height:1;color:var(--mudo2);display:block;margin-bottom:16px}
+
+/* ── dois desfechos ── */
+.frase{font-family:var(--display);font-weight:700;font-size:clamp(21px,2.8vw,32px);line-height:1.28;max-width:26ch;margin:48px 0 0;letter-spacing:-.6px}
+
+/* ── como eu trabalho ── */
+
+/* ── o sistema por dentro: diagrama simétrico feito de linha ── */
+.sistema{display:grid;grid-template-columns:1fr 250px 1fr;gap:0;margin-top:44px;align-items:stretch}
+.sistema .rot{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mudo);margin-bottom:14px}
+.sistema .lado{display:flex;flex-direction:column;gap:10px}
+.sistema .lado.dir{text-align:right;align-items:flex-end}
+.sistema .no{position:relative;background:var(--sup2);border:1px solid var(--linha);border-radius:4px;padding:14px 18px;width:100%;max-width:300px}
+.sistema .esq .no{margin-right:0;margin-left:auto}
+.sistema .no b{display:block;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.3px;line-height:1.25}
+.sistema .no span{display:block;font-size:13px;color:var(--mudo);margin-top:2px}
+/* conectores: cada nó puxa uma linha até o trilho do centro */
+.sistema .esq .no::after,.sistema .dir .no::after{content:"";position:absolute;top:50%;height:1px;background:var(--linha2);width:40px}
+.sistema .esq .no::after{right:-41px}
+.sistema .dir .no::after{left:-41px}
+.sistema .centro{position:relative;display:flex;align-items:center;justify-content:center;padding:0 40px}
+.sistema .centro::before,.sistema .centro::after{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--linha)}
+.sistema .centro::before{left:40px}
+.sistema .centro::after{right:40px}
+.nucleo{position:relative;z-index:1;width:170px;aspect-ratio:1;background:var(--sup);border:1px solid var(--linha2);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;color:var(--cor)}
+.nucleo b{display:block;font-family:var(--display);font-weight:700;font-size:15px;color:var(--texto);margin-top:10px;letter-spacing:-.3px}
+.nucleo span{display:block;font-size:11.5px;color:var(--mudo);line-height:1.4;margin-top:4px}
+.nucleo em{display:block;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--mudo);margin-top:10px}
+.pe-sistema{font-family:var(--mono);font-size:12.5px;color:var(--mudo);margin-top:22px;text-align:center}
+@media (max-width:980px){
+  .sistema{grid-template-columns:1fr}
+  .sistema .lado.dir{text-align:left;align-items:flex-start}
+  .sistema .esq .no{margin-left:0}
+  .sistema .no{max-width:none}
+  .sistema .esq .no::after,.sistema .dir .no::after,.sistema .centro::before,.sistema .centro::after{display:none}
+  .sistema .centro{padding:28px 0}
+  .sistema .rot{margin-top:10px}
+}
+
+/* ── pré-diagnóstico ── */
+.pd{display:grid;grid-template-columns:1.1fr .9fr;gap:1px;background:var(--linha);border:1px solid var(--linha);border-radius:4px;overflow:hidden;margin-top:44px}
+.pd-form,.pd-res{background:var(--sup2);padding:28px 30px}
+.pd-topo{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mudo);padding-bottom:14px;border-bottom:1px solid var(--linha);margin-bottom:6px}
+.pd-q{display:grid;grid-template-columns:34px 1fr 150px;gap:12px;align-items:center;padding:14px 0;border-bottom:1px dotted var(--linha2)}
+.pd-q:last-child{border-bottom:0}
+.pd-n{font-family:var(--mono);font-size:12px;color:var(--mudo)}
+.pd-t{font-size:14.5px;color:var(--texto);line-height:1.4}
+.pd-q input,.pd-q select{font-family:var(--mono);font-size:13px;color:var(--texto);background:var(--sup);border:1px solid var(--linha2);border-radius:4px;padding:9px 10px;width:100%;outline:none}
+.pd-q input:focus,.pd-q select:focus{border-color:var(--cor)}
+.pd-q input::placeholder{color:var(--mudo2)}
+.pd-res{display:flex;flex-direction:column}
+.pd-lead{font-family:var(--display);font-weight:700;font-size:20px;line-height:1.35;letter-spacing:-.3px;color:var(--texto);margin:16px 0 22px}
+.pd-num{border:1px solid var(--linha2);border-radius:4px;padding:18px 20px;background:var(--sup);margin-bottom:22px}
+.pd-rot{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mudo)}
+.pd-num b{display:block;font-family:var(--mono);font-weight:500;font-size:clamp(30px,3.4vw,42px);line-height:1.1;margin:8px 0 10px;color:var(--texto)}
+.pd-prem{display:block;font-size:12.5px;color:var(--mudo);line-height:1.5}
+.pd-res .cta{align-self:flex-start}
+.pd-res .ps{margin-top:16px}
+@media (max-width:980px){.pd{grid-template-columns:1fr}.pd-q{grid-template-columns:30px 1fr;}.pd-q input,.pd-q select{grid-column:2}}
+.pd-tel{display:block;margin:6px 0 18px}
+.pd-tel .pd-rot{margin-bottom:8px}
+.pd-tel input{font-family:var(--mono);font-size:15px;color:var(--texto);background:var(--sup);border:1px solid var(--linha2);border-radius:4px;padding:12px 14px;width:100%;outline:none}
+.pd-tel input:focus{border-color:var(--cor)}
+.pd-res button.cta{border:0;cursor:pointer;font-family:var(--corpo)}
+.pd-aviso{font-family:var(--mono);font-size:12.5px;color:var(--texto);margin-top:14px;padding:10px 12px;border:1px solid var(--linha2);border-radius:4px;background:var(--sup)}
+.pd-aviso[hidden]{display:none}
+
+/* ── o que fica ── */
+.fica{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha);border:1px solid var(--linha);margin-top:44px;border-radius:4px;overflow:hidden}
+.item{background:var(--sup2);padding:30px}
+.item .ic{font-family:var(--mono);font-size:12px;color:var(--mudo);margin-bottom:16px;display:block}
+.item p{font-size:14.5px}
+
+/* ── o que eu não faço ── */
+
+/* ── vertical ── */
+.vertical{border:1px solid var(--linha);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;background:var(--sup2);margin-top:36px;border-radius:4px}
+.vertical p{font-size:15px;max-width:56ch;margin-top:8px}
+.vertical .ponte{font-family:var(--mono);font-size:12.5px;color:var(--mudo);margin-top:18px;max-width:60ch;line-height:1.55}
+.fases .rot{display:block;font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--mudo);margin-bottom:4px}
+.fase{display:grid;grid-template-columns:40px 1fr;gap:12px;padding:12px 0;align-items:start}
+.fase+.fase{border-top:1px solid var(--linha)}
+.fase b{font-family:var(--mono);font-size:26px;font-weight:400;color:var(--texto);line-height:1.1}
+.fase strong{display:block;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.2px}
+.fase span{display:block;font-size:13.5px;color:var(--mudo);margin-top:2px;line-height:1.45}
+/* ── 08 · a máquina do Pátio Vivo (a arte dele, literal — decisão 18/09 20h05) ── */
+.vertical.rv{border-radius:4px 4px 0 0}
+.maquina{margin:0;border:1px solid var(--linha);border-top:0;border-radius:0 0 4px 4px;background:var(--sup2);padding:12px;line-height:0}
+.maquina img{display:block;width:100%;height:auto;border-radius:3px}
+@media (max-width:980px){.maquina{padding:8px}}
+
+/* ── quem faz ── */
+.quem{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:start;margin-top:36px}
+.retrato{width:260px;border:1px solid var(--linha2);background:var(--sup);overflow:hidden;border-radius:4px}
+.retrato img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.retrato-pe{font-family:var(--mono);font-size:11.5px;color:var(--mudo);margin-top:10px;letter-spacing:.4px}
+.quem h3{font-size:24px}
+.quem .cargo{font-family:var(--mono);font-size:12px;color:var(--mudo);margin:-2px 0 16px;letter-spacing:.4px}
+.quem p{font-size:15.5px;max-width:58ch}
+.quem blockquote{margin:28px 0 0;padding:22px 0 0 24px;border-left:1px solid var(--linha2);font-family:var(--display);font-weight:700;font-size:clamp(19px,2.1vw,23px);line-height:1.38;letter-spacing:-.4px;max-width:34ch;color:var(--texto)}
+
+/* ── pra quem é ── */
+
+/* ── perguntas ── */
+.faq{margin-top:36px;border-top:1px solid var(--linha)}
+.faq details{border-bottom:1px solid var(--linha)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr 32px;gap:20px;align-items:center;padding:22px 0;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.3px;line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .mais{font-family:var(--mono);font-size:18px;color:var(--mudo2);text-align:right;transition:transform .2s}
+.faq details[open] summary .mais{transform:rotate(45deg)}
+.faq .resp{padding:0 0 24px;font-size:15.5px;max-width:64ch}
+
+/* ── final ── */
+.final h2{max-width:22ch}
+.final p{max-width:52ch;margin:18px 0 32px;font-size:17px}
+.ps{font-family:var(--mono);font-size:12.5px;color:var(--mudo);margin-top:22px;max-width:60ch;line-height:1.6}
+.garantias{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linha);border:1px solid var(--linha);margin-top:48px;border-radius:4px;overflow:hidden;max-width:760px}
+.garantias div{background:var(--sup2);padding:22px 24px;font-size:14px;color:var(--mudo);line-height:1.5}
+.garantias b{display:block;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--texto);margin-bottom:6px}
+
+footer{padding:34px 0 40px;font-size:12.5px;color:var(--mudo);font-family:var(--mono)}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--mudo);text-decoration:none;border-bottom:1px solid var(--linha2)}
+footer a:hover{color:var(--texto);border-color:var(--texto)}
+footer .marca-pe{display:flex;align-items:center;gap:10px;color:var(--texto)}
+footer .marca-pe svg{width:26px;height:26px;color:var(--mudo)}
+
+/* ── reveal ── */
+html.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+html.js .rv.on{opacity:1;transform:none}
+/* escada dentro das grades: os filhos entram um a um, só por opacidade (o contêiner corta o excesso) */
+html.js .rv .dor,html.js .rv .item,html.js .rv .garantias>div,html.js .esc>details{opacity:0;transition:opacity .5s ease}
+html.js .rv.on .dor,html.js .rv.on .item,html.js .rv.on .garantias>div,html.js .esc.on>details{opacity:1}
+html.js .rv.on>:nth-child(2),html.js .esc.on>:nth-child(2){transition-delay:.08s}
+html.js .rv.on>:nth-child(3),html.js .esc.on>:nth-child(3){transition-delay:.16s}
+html.js .rv.on>:nth-child(4),html.js .esc.on>:nth-child(4){transition-delay:.24s}
+html.js .rv.on>:nth-child(5),html.js .esc.on>:nth-child(5){transition-delay:.32s}
+html.js .rv.on>:nth-child(6),html.js .esc.on>:nth-child(6){transition-delay:.40s}
+html.js .rv.on>:nth-child(7),html.js .esc.on>:nth-child(7){transition-delay:.48s}
+html.estatico .rv,html.estatico .rv *,html.estatico .esc>*{transition:none!important;opacity:1!important;transform:none!important}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .bolha{animation:none;opacity:1;transform:none}
+  .cta:hover{transform:none}
+  .faq summary .mais{transition:none}
+}
+
+/* ── responsivo ── */
+@media (max-width:980px){
+  nav{display:none}
+  .hero h1 br{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .cena{align-items:center}
+  .legenda,.pe-cena{text-align:center}
+  .aparelho{width:284px}
+  .ilha{width:90px;height:26px;border-radius:13px;top:20px}
+  .dores,.fica{grid-template-columns:1fr}
+  .vertical{grid-template-columns:1fr;padding:28px}
+  .quem{grid-template-columns:1fr;gap:24px}
+  .retrato{width:220px}
+  section{padding:76px 0}
+  .hero{padding:56px 0 72px}
+}
+@media (max-width:720px){
+  .garantias{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .wrap{padding:0 20px}
+  .marca svg{height:34px}
+  .cta{padding:11px 18px;font-size:13.5px}
+  .cta.grande{padding:14px 22px;font-size:15px;white-space:normal;text-align:center;line-height:1.35}
+  .dor,.item{padding:24px}
+  .selos{grid-template-columns:1fr}
+  .selo{border-right:0;padding:14px 0 0;margin-right:0;border-top:1px solid var(--linha)}
+  .selo:first-child{border-top:0}
+  .aparelho{width:256px;border-radius:44px;padding:9px}
+  .aparelho::before{border-radius:39px}
+  .ilha{width:82px;height:23px;border-radius:12px;top:18px}
+  .tela{border-radius:35px}
+  .bt.v1{top:98px;height:22px}.bt.v2{top:134px;height:42px}.bt.v3{top:184px;height:42px}.bt.pw{top:146px;height:66px}
+  .bolha{font-size:13px}
+  .num{display:none}
+  .faq summary{font-size:16.5px}
+  .quem blockquote{padding-left:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="marca" href="#topo" aria-label="BergerOS — início">
+      <!-- logo oficial (trabalhos/bergeros/logo/bergeros-logo.svg), texto já vetorizado: não depende de fonte -->
+      <svg viewBox="0 0 450 140" width="129" height="40" role="img" aria-label="BergerOS">
+        <g class="sig" transform="scale(2.258065)"><rect x="1" y="1" width="60" height="60" rx="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M18 40 L31 18 L44 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><line x1="24" y1="40" x2="38" y2="40" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></g>
+        <g class="word" transform="translate(168.00 92.40)"><path d="M2.94 0.00V-7.42H8.83V-37.38H2.94V-44.80H25.98Q30.08 -44.80 33.12 -43.42Q36.16 -42.05 37.86 -39.52Q39.55 -36.99 39.55 -33.47V-32.83Q39.55 -29.76 38.40 -27.81Q37.25 -25.86 35.68 -24.80Q34.11 -23.74 32.70 -23.30V-22.14Q34.11 -21.76 35.78 -20.70Q37.44 -19.65 38.62 -17.66Q39.81 -15.68 39.81 -12.48V-11.84Q39.81 -8.13 38.08 -5.47Q36.35 -2.82 33.31 -1.41Q30.27 0.00 26.24 0.00ZM17.28 -7.68H25.22Q27.97 -7.68 29.66 -9.02Q31.36 -10.37 31.36 -12.86V-13.50Q31.36 -16.00 29.70 -17.34Q28.03 -18.69 25.22 -18.69H17.28ZM17.28 -26.37H25.09Q27.71 -26.37 29.41 -27.71Q31.10 -29.06 31.10 -31.42V-32.06Q31.10 -34.50 29.44 -35.81Q27.78 -37.12 25.09 -37.12H17.28Z M60.24 0.90Q55.50 0.90 51.89 -1.12Q48.27 -3.14 46.26 -6.82Q44.24 -10.50 44.24 -15.49V-16.26Q44.24 -21.25 46.22 -24.93Q48.21 -28.61 51.79 -30.62Q55.38 -32.64 60.11 -32.64Q64.78 -32.64 68.24 -30.56Q71.70 -28.48 73.62 -24.80Q75.54 -21.12 75.54 -16.26V-13.50H52.43Q52.56 -10.24 54.86 -8.19Q57.17 -6.14 60.50 -6.14Q63.89 -6.14 65.49 -7.62Q67.09 -9.09 67.92 -10.88L74.51 -7.42Q73.62 -5.76 71.92 -3.81Q70.22 -1.86 67.41 -0.48Q64.59 0.90 60.24 0.90ZM52.50 -19.52H67.34Q67.09 -22.27 65.14 -23.94Q63.18 -25.60 60.05 -25.60Q56.78 -25.60 54.86 -23.94Q52.94 -22.27 52.50 -19.52Z M81.50 0.00V-31.74H89.44V-28.16H90.59Q91.30 -30.08 92.93 -30.98Q94.56 -31.87 96.74 -31.87H100.58V-24.70H96.61Q93.54 -24.70 91.55 -23.07Q89.57 -21.44 89.57 -18.05V0.00Z M104.11 -15.74V-16.77Q104.11 -21.76 106.10 -25.31Q108.08 -28.86 111.38 -30.75Q114.67 -32.64 118.58 -32.64Q122.93 -32.64 125.17 -31.10Q127.41 -29.57 128.43 -27.90H129.58V-31.74H137.52V5.63Q137.52 8.90 135.60 10.85Q133.68 12.80 130.48 12.80H109.23V5.76H127.66Q129.46 5.76 129.46 3.84V-4.42H128.30Q127.66 -3.39 126.51 -2.34Q125.36 -1.28 123.44 -0.58Q121.52 0.13 118.58 0.13Q114.67 0.13 111.38 -1.76Q108.08 -3.65 106.10 -7.20Q104.11 -10.75 104.11 -15.74ZM120.88 -6.91Q124.59 -6.91 127.09 -9.28Q129.58 -11.65 129.58 -15.94V-16.58Q129.58 -20.93 127.12 -23.26Q124.66 -25.60 120.88 -25.60Q117.17 -25.60 114.67 -23.26Q112.18 -20.93 112.18 -16.58V-15.94Q112.18 -11.65 114.67 -9.28Q117.17 -6.91 120.88 -6.91Z M159.74 0.90Q155.01 0.90 151.39 -1.12Q147.78 -3.14 145.76 -6.82Q143.74 -10.50 143.74 -15.49V-16.26Q143.74 -21.25 145.73 -24.93Q147.71 -28.61 151.30 -30.62Q154.88 -32.64 159.62 -32.64Q164.29 -32.64 167.74 -30.56Q171.20 -28.48 173.12 -24.80Q175.04 -21.12 175.04 -16.26V-13.50H151.94Q152.06 -10.24 154.37 -8.19Q156.67 -6.14 160.00 -6.14Q163.39 -6.14 164.99 -7.62Q166.59 -9.09 167.42 -10.88L174.02 -7.42Q173.12 -5.76 171.42 -3.81Q169.73 -1.86 166.91 -0.48Q164.10 0.90 159.74 0.90ZM152.00 -19.52H166.85Q166.59 -22.27 164.64 -23.94Q162.69 -25.60 159.55 -25.60Q156.29 -25.60 154.37 -23.94Q152.45 -22.27 152.00 -19.52Z M181.01 0.00V-31.74H188.94V-28.16H190.10Q190.80 -30.08 192.43 -30.98Q194.06 -31.87 196.24 -31.87H200.08V-24.70H196.11Q193.04 -24.70 191.06 -23.07Q189.07 -21.44 189.07 -18.05V0.00Z M222.30 0.90Q213.86 0.90 208.86 -3.74Q203.87 -8.38 203.87 -17.02V-27.78Q203.87 -36.42 208.86 -41.06Q213.86 -45.70 222.30 -45.70Q230.75 -45.70 235.74 -41.06Q240.74 -36.42 240.74 -27.78V-17.02Q240.74 -8.38 235.74 -3.74Q230.75 0.90 222.30 0.90ZM222.30 -6.66Q227.04 -6.66 229.66 -9.41Q232.29 -12.16 232.29 -16.77V-28.03Q232.29 -32.64 229.66 -35.39Q227.04 -38.14 222.30 -38.14Q217.63 -38.14 214.98 -35.39Q212.32 -32.64 212.32 -28.03V-16.77Q212.32 -12.16 214.98 -9.41Q217.63 -6.66 222.30 -6.66Z M262.51 0.90Q257.33 0.90 253.36 -0.96Q249.39 -2.82 247.15 -6.27Q244.91 -9.73 244.91 -14.59V-16.38H253.23V-14.59Q253.23 -10.56 255.73 -8.54Q258.22 -6.53 262.51 -6.53Q266.86 -6.53 269.01 -8.26Q271.15 -9.98 271.15 -12.67Q271.15 -14.53 270.10 -15.68Q269.04 -16.83 267.02 -17.57Q265.01 -18.30 262.13 -18.94L260.66 -19.26Q256.05 -20.29 252.75 -21.86Q249.46 -23.42 247.70 -25.98Q245.94 -28.54 245.94 -32.64Q245.94 -36.74 247.89 -39.65Q249.84 -42.56 253.39 -44.13Q256.94 -45.70 261.74 -45.70Q266.54 -45.70 270.29 -44.06Q274.03 -42.43 276.18 -39.20Q278.32 -35.97 278.32 -31.10V-29.18H270.00V-31.10Q270.00 -33.66 269.01 -35.23Q268.02 -36.80 266.16 -37.54Q264.30 -38.27 261.74 -38.27Q257.90 -38.27 256.08 -36.83Q254.26 -35.39 254.26 -32.90Q254.26 -31.23 255.12 -30.08Q255.98 -28.93 257.71 -28.16Q259.44 -27.39 262.13 -26.82L263.60 -26.50Q268.40 -25.47 271.95 -23.87Q275.50 -22.27 277.49 -19.65Q279.47 -17.02 279.47 -12.93Q279.47 -8.83 277.39 -5.73Q275.31 -2.62 271.50 -0.86Q267.70 0.90 262.51 0.90Z"/></g>
+      </svg>
+    </a>
+    <nav aria-label="Seções">
+      <a href="#fica">O que fica</a>
+      <a href="#perguntas">Perguntas</a>
+    </nav>
+    <a class="cta" href="#diagnostico">Quero o diagnóstico</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- 01 · TOPO -->
+<section class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Para lojas multimarcas e revendas de veículos</span>
+      <h1>Venda <em class="ouro">mais</em> veículos com uma infraestrutura de crescimento com inteligência artificial.</h1>
+      <p class="lede">Eu entro na sua loja, meço quantos compradores escapam entre a primeira mensagem e o test-drive, e desenho o processo — depois integro a tecnologia que faz esse processo rodar sem depender de alguém lembrar.</p>
+      <a class="cta grande" href="#diagnostico">Quero o diagnóstico de 30 minutos</a>
+      <div class="selos">
+        <span class="selo"><b>Poucas</b>lojas por vez</span>
+        <span class="selo"><b>Itajaí/SC</b>presencial ou remoto</span>
+      </div>
+      <svg class="regua" aria-hidden="true" preserveAspectRatio="none">
+        <defs><pattern id="ticks" width="80" height="14" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="1" height="14" fill="currentColor"/>
+          <rect x="16" y="9" width="1" height="5" fill="currentColor" opacity=".55"/>
+          <rect x="32" y="9" width="1" height="5" fill="currentColor" opacity=".55"/>
+          <rect x="48" y="9" width="1" height="5" fill="currentColor" opacity=".55"/>
+          <rect x="64" y="9" width="1" height="5" fill="currentColor" opacity=".55"/>
+        </pattern></defs>
+        <rect width="100%" height="14" fill="url(#ticks)"/>
+      </svg>
+    </div>
+
+    <div class="cena">
+      <p class="legenda">// domingo, 22h14 — loja fechada, comprador atendido</p>
+      <div class="aparelho" aria-label="Conversa de WhatsApp que se monta sozinha: comprador atendido num domingo à noite">
+        <span class="bt v1"></span><span class="bt v2"></span><span class="bt v3"></span><span class="bt pw"></span>
+        <span class="ilha"></span>
+        <div class="tela">
+          <div class="status">
+            <span>22h14</span>
+            <span class="glifos">
+              <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor" aria-hidden="true"><rect y="8" width="3" height="3" rx="1"/><rect x="4.6" y="6" width="3" height="5" rx="1"/><rect x="9.2" y="3.5" width="3" height="7.5" rx="1"/><rect x="13.8" y="1" width="3" height="10" rx="1"/></svg>
+              <svg width="15" height="11" viewBox="0 0 15 11" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M1 3.6a9 9 0 0 1 13 0"/><path d="M3.6 6.3a5.4 5.4 0 0 1 7.8 0"/><circle cx="7.5" cy="9.2" r="1" fill="currentColor" stroke="none"/></svg>
+              <svg width="24" height="11" viewBox="0 0 24 11" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><rect x=".5" y=".5" width="20" height="10" rx="2.6"/><rect x="2" y="2" width="13" height="7" rx="1.4" fill="currentColor" stroke="none"/><path d="M22.2 4v3" stroke-linecap="round"/></svg>
+            </span>
+          </div>
+          <div class="cabeca">
+            <svg class="voltar" width="8" height="13" viewBox="0 0 8 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 1.5 1.5 6.5l5 5"/></svg>
+            <div class="av">M</div>
+            <div>
+              <div class="nome">Marcos</div>
+              <div class="online">online</div>
+            </div>
+          </div>
+          <div class="chat" id="chat"></div>
+        </div>
+      </div>
+      <p class="pe-cena">Quem respondeu às 22h14 foi o processo.<br>Quem vai atender às 9h30 é o seu vendedor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · A DOR -->
+<section id="dor">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow">O que costuma estar acontecendo</span><span class="num">02 / 09</span></div>
+    <h2 class="rv">Não é falta de comprador.<br>É o que acontece com o comprador que já <em class="ouro">chegou</em>.</h2>
+    <div class="dores dores2 rv">
+      <div class="dor dor-hora">
+        <span class="carimbo forte menor">Sábado, 22h14</span>
+        <div class="balao" aria-hidden="true">
+          <span>Boa noite, o Onix ainda tá disponível?</span>
+          <em>✓✓ visto às 22h14 · sem resposta</em>
+        </div>
+        <div class="tempo" aria-hidden="true">
+          <span class="pt"><b>22h14</b>a mensagem chega</span>
+          <span class="tracho"><i>10 horas sem ninguém responder</i></span>
+          <span class="pt"><b>08h12</b>o vendedor vê</span>
+        </div>
+        <h3>O lead do anúncio chama e ninguém responde</h3>
+        <p>Webmotors, OLX, Instagram: o comprador manda mensagem às 22h de sábado. Quando o vendedor vê, ele já foi ver outro carro em outra loja.</p>
+      </div>
+      <div class="dor dor-lembrete">
+        <span class="carimbo forte menor">Esqueceu?</span>
+        <div class="balao meu" aria-hidden="true">
+          <span>Te aviso assim que o Civic chegar!</span>
+          <em>ter, 10h02 · o vendedor</em>
+        </div>
+        <ul class="depois" aria-hidden="true">
+          <li><b>qui</b>o Civic chegou</li>
+          <li><b>sex</b>ninguém avisou</li>
+          <li><b>seg</b>o comprador fechou em outra loja</li>
+        </ul>
+        <h3>O retorno prometido que ninguém fez</h3>
+        <p>O "te aviso quando chegar", a resposta sobre a troca, o retorno de sexta. Tudo depende de alguém lembrar — e falha exatamente na semana em que o pátio está cheio.</p>
+      </div>
+      <div class="dor dor-painel">
+        <span class="carimbo forte menor">Quantos?</span>
+        <div class="duas" aria-hidden="true">
+          <div class="papo">
+            <span class="rot">Hoje, na sua loja</span>
+            <p class="q">— Quantos compradores chegaram esse mês?</p>
+            <p class="r">— Uns quarenta… acho.</p>
+            <p class="q">— Quantos fizeram test-drive?</p>
+            <p class="r">— Não sei.</p>
+            <p class="q">— Quais carros estão parados há mais de 45 dias?</p>
+            <p class="r">— Tenho que olhar.</p>
+          </div>
+          <div class="painel">
+            <span class="rot">Com o painel · toda segunda, 8h, na sua mesa</span>
+            <div class="kpi"><span>Compradores que chegaram</span><b>o número exato</b></div>
+            <div class="kpi"><span>Respondidos em até 2 minutos</span><b>todos</b></div>
+            <div class="kpi"><span>Test-drives marcados</span><b>quantos e com quem</b></div>
+            <div class="kpi"><span>Carros parados há mais de 45 dias</span><b>quais</b></div>
+          </div>
+        </div>
+        <h3>Você decide no feeling porque não tem número</h3>
+        <p>O painel troca o "acho" por número. Toda segunda você sabe quantos chegaram, quantos foram respondidos, quantos fizeram test-drive e quais carros estão parados. Decisão com número na mão, não com feeling.</p>
+      </div>
+      <div class="dor virada">
+        <span class="carimbo">15 dias</span>
+        <h3>A IA não esquece</h3>
+        <p>O comprador amou o carro, mas está terminando uma obra e só volta daqui a 15 dias. A infra etiqueta a conversa, marca na agenda o dia de retomar e entrega pro seu vendedor tudo o que foi falado, o motivo da espera e a sequência de aquecimento daquele lead. No dia, a IA retoma com um "e aí, terminou a obra, foi tudo bem?" — e o seu vendedor fecha a venda. Nada passa em branco.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · O SISTEMA POR DENTRO -->
+<section id="sistema">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow">O sistema por dentro</span><span class="num">03 / 09</span></div>
+    <h2 class="rv">De onde o comprador chega.<br>E o que <em class="ouro">acontece</em> com ele.</h2>
+    <p class="intro rv">Todo canal desemboca no mesmo lugar. O núcleo responde, registra e lembra — e devolve pro seu vendedor o que é trabalho de gente.</p>
+    <div class="sistema rv">
+      <div class="lado esq">
+        <span class="rot">Onde o comprador te acha</span>
+        <div class="no"><b>Portais</b><span>Webmotors, OLX, iCarros</span></div>
+        <div class="no"><b>Site da loja</b><span>o formulário e o botão</span></div>
+        <div class="no"><b>Instagram</b><span>quem chega pelo perfil</span></div>
+        <div class="no"><b>WhatsApp</b><span>o número da loja</span></div>
+        <div class="no"><b>Base antiga</b><span>quem já comprou de você</span></div>
+      </div>
+      <div class="centro">
+        <div class="nucleo">
+          <svg viewBox="0 0 62 62" width="44" height="44" aria-hidden="true"><rect x="1" y="1" width="60" height="60" rx="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M18 40 L31 18 L44 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><line x1="24" y1="40" x2="38" y2="40" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+          <b>Núcleo BergerOS</b>
+          <span>o processo que responde, registra e lembra</span>
+          <em>com IA integrada</em>
+        </div>
+      </div>
+      <div class="lado dir">
+        <span class="rot">O que sai do outro lado</span>
+        <div class="no"><b>Atendimento</b><span>nenhum lead esquecido</span></div>
+        <div class="no"><b>Reativação</b><span>a base antiga volta pra loja</span></div>
+        <div class="no"><b>Agenda</b><span>test-drive marcado, não prometido</span></div>
+        <div class="no"><b>Painel</b><span>o número na sua mesa</span></div>
+        <div class="no"><b>Treinamento</b><span>seus vendedores melhoram toda semana</span></div>
+      </div>
+    </div>
+    <p class="pe-sistema rv">// entra de cinco lados, sai por cinco frentes — e passa por um único processo</p>
+  </div>
+</section>
+
+<!-- 06 · O QUE FICA -->
+<section id="fica">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow">O que fica na sua loja</span><span class="num">04 / 09</span></div>
+    <h2 class="rv">Quando eu saio, não vai junto.</h2>
+    <div class="fica rv">
+      <div class="item"><span class="ic">[ 01 ]</span><h3>Processo escrito</h3><p>O jeito de fazer sai da cabeça de alguém e vira algo que qualquer pessoa nova consegue seguir.</p></div>
+      <div class="item"><span class="ic">[ 02 ]</span><h3>Vendedores treinados</h3><p>Treinamento não é cortesia no fim do projeto. É parte do serviço — sem isso, nada roda.</p></div>
+      <div class="item"><span class="ic">[ 03 ]</span><h3>Número antes e depois</h3><p>Um painel com a medição do primeiro dia ao lado da de agora. A prova fica com você.</p></div>
+    </div>
+    <p class="frase rv">Você não compra programa.<br>Compra processo <em class="ouro">instalado</em>.</p>
+  </div>
+</section>
+
+<!-- 08 · O PRIMEIRO VERTICAL -->
+<section id="vertical">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow">Onde eu comecei</span><span class="num">05 / 09</span></div>
+    <div class="vertical rv">
+      <div>
+        <h2 style="font-size:clamp(26px,3.4vw,38px);margin-top:0">Giro de Pátio<span style="font-size:.5em;vertical-align:super">™</span></h2>
+        <p>O método desenhado para revenda de veículos: o comprador que manda mensagem às 22h é atendido na hora, o test-drive entra na agenda do vendedor e o dono enxerga o giro do pátio por número — não por feeling.</p>
+        <p class="ponte">O mesmo jeito de trabalhar serve a qualquer loja em que o comprador chega e alguém precisa lembrar de responder.</p>
+      </div>
+      <div class="fases" aria-label="As cinco fases do método">
+        <span class="rot">As cinco fases · P.Á.T.I.O.</span>
+        <div class="fase"><b>P</b><div><strong>Preparar</strong><span>o estoque vira ficha de resposta: preço, ano, km, entrada mínima, troca, laudo</span></div></div>
+        <div class="fase"><b>A</b><div><strong>Atender</strong><span>o WhatsApp da loja responde em até 2 minutos, 24/7, e qualifica o comprador</span></div></div>
+        <div class="fase"><b>T</b><div><strong>Test-drive</strong><span>na agenda do vendedor, com confirmação e lembrete; o vendedor recebe o resumo antes</span></div></div>
+        <div class="fase"><b>I</b><div><strong>Insistir</strong><span>quem não apareceu, lead frio de 7, 15 e 30 dias, carro que baixou de preço</span></div></div>
+        <div class="fase"><b>O</b><div><strong>Operar por número</strong><span>painel semanal: leads, respondidos, test-drives, carros parados há mais de 45 dias</span></div></div>
+      </div>
+    </div>
+    <figure class="maquina rv">
+      <img src="assets/maquina-patio-vivo.jpg" width="1024" height="572" alt="Método Pátio Vivo: de onde o comprador chega, o funil, o núcleo de IA, o Mentor e as células de eficiência" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
+<!-- 09 · QUEM FAZ -->
+<section id="quem">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow">Quem faz</span><span class="num">06 / 09</span></div>
+    <div class="quem rv">
+      <div>
+        <div class="retrato"><img src="img/raphael.jpg" alt="Raphael Berger" width="900" height="1125" decoding="async"></div>
+        <p class="retrato-pe">Raphael Berger · Itajaí/SC</p>
+      </div>
+      <div>
+        <h3>Raphael Berger</h3>
+        <p class="cargo">fundador da BergerOS · sócio de indústria antes de consultor</p>
+        <p>Fundei a BergerOS pra levar a outros empresários o que aprendi na prática: os estudos e as técnicas de venda que aplico no meu próprio negócio, e a IA como ferramenta pra fazer a operação rodar sem depender de alguém lembrar. Não é teoria de quem nunca tocou empresa: é o olhar de quem já sentou do seu lado da mesa.</p>
+        <blockquote>Com mapeamento e dado na mão, e o olhar de quem vê <em class="ouro">de fora</em>, eu encontro o gargalo que você não vê, planejo a estratégia e te direciono pra ação — o que quem está dentro do negócio todo dia não consegue enxergar pela rotina. Estratégia, planejamento e ação, potencializados com IA.</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · PERGUNTAS -->
+<section id="perguntas">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow">Sem rodeio</span><span class="num">07 / 09</span></div>
+    <h2 class="rv">As perguntas que todo <em class="ouro">dono</em> faz antes de me chamar.</h2>
+    <div class="faq esc">
+      <details>
+        <summary>Preciso trocar o sistema que já uso?<span class="mais">+</span></summary>
+        <p class="resp">Não. O que você usa pra gestão, estoque e nota fica onde está. Eu entro na camada que hoje está vazia: o que acontece com o comprador entre a primeira mensagem e a venda. O processo se encaixa no que você já tem.</p>
+      </details>
+      <details>
+        <summary>Meus vendedores vão ter mais trabalho?<span class="mais">+</span></summary>
+        <p class="resp">Menos. O que é digitação e lembrete sai da mão do vendedor. O treinamento é parte do serviço, não cortesia — e o painel mostra quem está usando. Se no fim da conversa os seus vendedores acharem que vão ter mais trabalho, eu não fecho.</p>
+      </details>
+      <details>
+        <summary>Quanto tempo leva?<span class="mais">+</span></summary>
+        <p class="resp">A medição leva um ou dois dias, sem mexer em nada. O prazo da implantação depende do que a medição mostrar e vai escrito no contrato, com ordem e data. Nada de "vamos vendo".</p>
+      </details>
+      <details>
+        <summary>O comprador vai perceber que não é uma pessoa respondendo?<span class="mais">+</span></summary>
+        <p class="resp">Ele vai perceber que foi respondido. O que responde na hora é o processo que a gente desenhou, falando do que foi combinado. O que não foi combinado não é inventado — passa pro seu vendedor. Quem fecha continua sendo gente.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 12 · PRÉ-DIAGNÓSTICO  -->
+<section id="prediag">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow">Pré-diagnóstico</span><span class="num">08 / 09</span></div>
+    <h2 class="rv">Seis perguntas. Eu te ligo com o <em class="ouro">diagnóstico</em>.</h2>
+    <p class="intro rv">Responde com o que você sabe de cabeça, deixa o seu WhatsApp e eu te ligo com o diagnóstico — feito em cima dos seus números, não de exemplo de outra loja.</p>
+    <div class="pd rv">
+      <form class="pd-form" id="pdform" autocomplete="off">
+        <div class="pd-topo"><span>Diagnóstico · semana 0</span><span>6 perguntas</span></div>
+        <label class="pd-q"><span class="pd-n">01</span><span class="pd-t">Quantos compradores novos te procuram por mês?</span><input type="number" min="0" name="contatos" placeholder="ex.: 40"></label>
+        <label class="pd-q"><span class="pd-n">02</span><span class="pd-t">Por onde eles chegam, na maioria?</span>
+          <select name="canal"><option value="">escolher</option><option>Portal (Webmotors, OLX, iCarros)</option><option>Site da loja</option><option>Instagram</option><option>WhatsApp direto</option><option>Indicação</option></select></label>
+        <label class="pd-q"><span class="pd-n">03</span><span class="pd-t">Em quanto tempo o comprador recebe a primeira resposta?</span>
+          <select name="tempo"><option value="">escolher</option><option>na hora</option><option>em até 1 hora</option><option>no mesmo dia</option><option>no dia seguinte</option><option>depende de quem viu</option></select></label>
+        <label class="pd-q"><span class="pd-n">04</span><span class="pd-t">De cada 10 que chegam, quantos fecham?</span><input type="number" min="0" max="10" name="fecham" placeholder="ex.: 2"></label>
+        <label class="pd-q"><span class="pd-n">05</span><span class="pd-t">Quanto você ganha, em média, por carro vendido?</span><input type="number" min="0" name="valor" placeholder="R$ ex.: 3.000"></label>
+        <label class="pd-q"><span class="pd-n">06</span><span class="pd-t">Quem já comprou de você — alguém fala com eles hoje?</span>
+          <select name="base"><option value="">escolher</option><option>sim, com rotina</option><option>às vezes</option><option>não</option></select></label>
+      </form>
+      <aside class="pd-res">
+        <div class="pd-topo"><span>O diagnóstico</span><span>por ligação</span></div>
+        <p class="pd-lead">Eu leio as suas respostas e te ligo com o diagnóstico. Sem número na tela — a conta é feita com você, na ligação.</p>
+        <label class="pd-tel"><span class="pd-rot">Seu WhatsApp</span><input type="tel" name="whats" form="pdform" placeholder="(47) 9 9999-9999" inputmode="tel"></label>
+        <label class="pd-tel"><span class="pd-rot">Seu e-mail</span><input type="email" name="email" form="pdform" placeholder="voce@suaempresa.com.br" inputmode="email"></label>
+        <button class="cta grande" type="submit" form="pdform">Quero receber o diagnóstico por ligação</button>
+        <p class="pd-aviso" id="pdaviso" hidden>// agora é noite por aqui — a ligação vem no próximo dia, em horário comercial.</p>
+        <p class="ps">P.S. WhatsApp e e-mail servem só pra essa ligação e pra te mandar o diagnóstico por escrito. Nada de lista, nada de disparo.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · O PRÓXIMO PASSO -->
+<section class="final" id="diagnostico">
+  <div class="wrap">
+    <div class="cab rv"><span class="eyebrow">O próximo passo</span><span class="num">09 / 09</span></div>
+    <h2 class="rv"><em class="ouro">Trinta</em> minutos olhando a sua loja.</h2>
+    <p class="rv">Por videochamada ou na sua loja. Se fizer sentido, eu te mostro o que instalaria. Se não fizer, você fica com o diagnóstico mesmo assim — e está tudo certo.</p>
+    <a class="cta grande rv" href="https://wa.me/5547999122932?text=Vim%20pelo%20site%20do%20BergerOS%20e%20quero%20o%20diagn%C3%B3stico%20de%2030%20minutos" target="_blank" rel="noopener">Falar comigo no WhatsApp</a>
+    <p class="ps rv">P.S. Não é conversa de venda. Se não fizer sentido pra você, eu mesmo te digo — e o diagnóstico fica com você.</p>
+    <div class="garantias rv">
+      <div><b>Poucas lojas por vez</b>Implantação acompanhada de perto, do diagnóstico ao painel. Por isso a fila existe.</div>
+      <div><b>O diagnóstico fica com você</b>Feche ou não. A medição da sua loja é sua, e você leva mesmo que a gente não siga junto.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="marca-pe">
+      <svg viewBox="0 0 62 62" aria-hidden="true"><rect x="1" y="1" width="60" height="60" rx="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M18 40 L31 18 L44 40" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><line x1="24" y1="40" x2="38" y2="40" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
+      BergerOS — Itajaí/SC
+    </span>
+    <span>consultoria com integração de IA</span>
+    <a href="https://wa.me/5547999122932?text=Vim%20pelo%20site%20do%20BergerOS" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="wrap" style="margin-top:12px;font-size:11.5px;color:var(--mudo2)">O pré-diagnóstico envia suas respostas, WhatsApp e e-mail direto pro WhatsApp do BergerOS, só pra essa ligação. Nada fica guardado nesta página. LGPD: pedir exclusão é mandar uma mensagem.</div>
+  <!-- Rodapé do gos-lp-builder (regra LICENSE da skill). Desligado por decisão de marca do BRIEFING-SITE.md
+       ("não parece o site da Accelera") — pra ligar, tirar o comentário:
+  <div class="wrap" style="margin-top:14px"><span>Powered by Accelera 360</span></div>
+  -->
+</footer>
+
+<script>
+var falas=[
+ {q:'ele',t:'Boa noite, o Onix ainda tá disponível?',h:'22h14'},
+ {q:'nos',t:'Boa noite! Está sim: 2021, laudo em dia, aceita troca. Quer os detalhes?',h:'22h14'},
+ {q:'ele',t:'Consigo fazer um test-drive amanhã de manhã?',h:'22h15'},
+ {q:'nos',t:'Consegue. 9h30 ou 11h?',h:'22h15'},
+ {q:'ele',t:'9h30',h:'22h16'},
+ {q:'nos',t:'Test-drive marcado: amanhã, 9h30. O vendedor já sabe e te espera.',h:'22h16'}
+];
+(function(){
+  var el=document.getElementById('chat'); if(!el) return;
+  falas.forEach(function(f,i){
+    var b=document.createElement('div');
+    b.className='bolha '+f.q;
+    var atraso=0.45+i*0.7;
+    b.style.animationDelay=atraso+'s';
+    b.innerHTML=f.t+'<span class="h">'+f.h+'</span>';
+    el.appendChild(b);
+    // a tela acompanha a conversa, como num celular de verdade (rolagem instantânea, não smooth)
+    setTimeout(function(){ el.scrollTop=el.scrollHeight; }, (atraso+0.35)*1000);
+  });
+})();
+</script>
+<!-- Movimento: reveal por IntersectionObserver + CSS (nunca esconde conteúdo sem JS); GSAP só em efeitos aditivos -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+(function(){
+  var reduz=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduz) return;                                   // sem JS de movimento: tudo visível, sem transição
+  document.documentElement.classList.add('js');
+  var alvos=document.querySelectorAll('.rv, .esc');
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });
+  },{threshold:.08,rootMargin:'0px 0px -6% 0px'});
+  alvos.forEach(function(n){io.observe(n)});
+  // trava: se em 2,5 s nada entrou (aba escondida, robô), mostra tudo sem animar
+  setTimeout(function(){
+    if(document.hidden) document.documentElement.classList.add('estatico');
+  },2500);
+  if(!window.gsap) return;
+  gsap.ticker.lagSmoothing(0);
+  var E='power2.out';
+  // topo: entra uma vez, na ordem de leitura — só com a aba visível
+  var tl=gsap.timeline({defaults:{ease:E,duration:.6},paused:document.hidden});
+  tl.from('.hero .eyebrow',{y:10,opacity:0})
+    .from('.hero h1',{y:18,opacity:0,duration:.7},'-=.35')
+    .from('.hero .lede',{y:14,opacity:0},'-=.4')
+    .from('.hero .cta.grande',{y:12,opacity:0},'-=.35')
+    .from('.selo',{y:10,opacity:0,stagger:.08},'-=.3')
+    .from('.regua',{scaleX:0,transformOrigin:'left center',duration:.9,ease:'power3.out'},'-=.3')
+    .from('.legenda',{opacity:0},'-=.9')
+    .from('.aparelho',{y:26,opacity:0,duration:.8},'-=.9')
+    .from('.pe-cena',{opacity:0},'-=.2');
+  if(document.hidden) document.addEventListener('visibilitychange',function v(){ if(!document.hidden){ tl.play(); document.removeEventListener('visibilitychange',v);} });
+  // ficha: as linhas dos campos se desenham quando a ficha entra na tela
+  var ficha=document.querySelector('.ficha');
+  if(ficha){
+    var io2=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ gsap.from(ficha.querySelectorAll('dd'),{scaleX:0,transformOrigin:'left center',duration:.7,ease:'power3.out',stagger:.1}); io2.disconnect(); } });
+    },{threshold:.3});
+    io2.observe(ficha);
+  }
+  // trava do GSAP: relógio parado (aba escondida) → estado final sem animar
+  setTimeout(function(){
+    if(gsap.ticker.time===0){
+      gsap.globalTimeline.getChildren(true,true,true).forEach(function(t){ t.kill(); });
+      document.querySelectorAll('[style*="opacity"],[style*="transform"]').forEach(function(el){
+        el.style.opacity=''; el.style.transform=''; el.style.translate=''; el.style.rotate=''; el.style.scale='';
+      });
+    }
+  },2500);
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('pdform'); if(!f) return;
+  // ENDPOINT: webhook (n8n) que recebe as respostas e avisa o Raphael. Enquanto vazio, cai no WhatsApp dele com o texto pronto.
+  var ENDPOINT='';
+  // aviso de horário: à noite/madrugada (18h–8h) ou fim de semana, a ligação vem no próximo dia útil
+  var av=document.getElementById('pdaviso'), ag=new Date(), hr=ag.getHours(), ds=ag.getDay();
+  if(av && (hr>=18 || hr<8 || ds===0 || ds===6)){
+    av.textContent = (ds===0||ds===6) ? '// fim de semana por aqui — a ligação vem na segunda, em horário comercial.' : '// agora é noite por aqui — a ligação vem no próximo dia, em horário comercial.';
+    av.hidden=false;
+  }
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var d=Object.fromEntries(new FormData(f).entries());
+    var falta=['contatos','canal','tempo','fecham','valor','base','whats','email'].filter(function(k){return !d[k]});
+    if(falta.length){ f.querySelector('[name='+falta[0]+']').focus(); return; }
+    var txt='Pré-diagnóstico BergerOS — '+d.contatos+' compradores/mês; chegam por '+d.canal+'; resposta '+d.tempo+'; fecham '+d.fecham+' em 10; ganho médio por carro R$ '+d.valor+'; base antiga: '+d.base+'. Meu WhatsApp: '+d.whats+'; e-mail: '+d.email+'. Quero a leitura por ligação.';
+    if(ENDPOINT){
+      fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(){ f.innerHTML='<p class="pd-lead">Recebi. Eu te ligo no '+d.whats+' com o diagnóstico.</p>'; })
+        .catch(function(){ window.open('https://wa.me/5547999122932?text='+encodeURIComponent(txt),'_blank'); });
+    } else {
+      window.open('https://wa.me/5547999122932?text='+encodeURIComponent(txt),'_blank');
+    }
+  });
+})();
+</script>
+</body>
+</html>
