@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Rotina comercial de uma revenda</title>
+  <desc id="desc">Ilustração editorial de um carro no pátio e uma linha de processo que conecta interesse, visita e negociação.</desc>
+  <rect width="1200" height="720" fill="#e8eee8"/>
+  <path d="M0 500C210 458 395 470 572 510s384 42 628-36v246H0Z" fill="#d4e3d8"/>
+  <path d="M0 570c230-38 402-16 595 20s350 29 605-43" fill="none" stroke="#a7c6b3" stroke-width="3"/>
+  <g fill="none" stroke="#6da58a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M98 174h176l84 84 100-100 106 106 145-144"/>
+    <circle cx="98" cy="174" r="9" fill="#14695c" stroke="none"/>
+    <circle cx="274" cy="174" r="9" fill="#14695c" stroke="none"/>
+    <circle cx="458" cy="158" r="9" fill="#14695c" stroke="none"/>
+    <circle cx="664" cy="264" r="9" fill="#14695c" stroke="none"/>
+    <circle cx="809" cy="120" r="9" fill="#14695c" stroke="none"/>
+  </g>
+  <g transform="translate(330 280)">
+    <path d="M0 167 48 94c8-12 21-19 36-19h185c19 0 36 9 47 24l39 53c5 7 12 11 21 11h30c20 0 36 16 36 36v58H0Z" fill="#162622"/>
+    <path d="M96 86h169c11 0 21 5 28 14l33 45H55l25-39c4-12 9-20 16-20Z" fill="#c6e8d8"/>
+    <path d="m103 89 49 56h80l42-56Z" fill="#93b5a5"/>
+    <path d="M17 191h349" stroke="#c6e8d8" stroke-width="4"/>
+    <circle cx="87" cy="225" r="31" fill="#f5f4ef" stroke="#162622" stroke-width="11"/>
+    <circle cx="301" cy="225" r="31" fill="#f5f4ef" stroke="#162622" stroke-width="11"/>
+    <circle cx="87" cy="225" r="7" fill="#14695c"/>
+    <circle cx="301" cy="225" r="7" fill="#14695c"/>
+  </g>
+</svg>
