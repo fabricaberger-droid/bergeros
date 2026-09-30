@@ -117,13 +117,77 @@
   const response = document.getElementById('challenge-response');
   const whatsapp = document.getElementById('contextual-whatsapp');
   /** @param {string} value */
+  /**
+   * CAPTURA — liberada em 25/09/2026. Endpoint de formulario: cole aqui a URL de um servico
+   * gratuito (ex.: Formspree) pra receber nome + WhatsApp por e-mail. Vazio = so o WhatsApp,
+   * que ja leva os numeros. NUNCA por chave de API aqui: este arquivo e publico.
+   */
+  const CAPTURA_ENDPOINT = '';
+  const moedaBR = new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL', maximumFractionDigits:0});
+  /** Le o que o visitante digitou no simulador. Retorna null se faltar campo. */
+  function dadosDoSimulador() {
+    const v = id => { const el = document.getElementById(id); return el instanceof HTMLInputElement && Number.isFinite(el.valueAsNumber) ? el.valueAsNumber : null; };
+    const contatos = v('monthly-contacts'), ticket = v('average-sale'), atual = v('current-conversion'), cenario = v('scenario-conversion');
+    if (contatos === null || ticket === null || atual === null || cenario === null) return null;
+    return {contatos, ticket, atual, cenario, diferenca: contatos * (cenario - atual) / 100 * ticket};
+  }
+  /** O resumo em texto, pra mensagem do WhatsApp levar os numeros junto. */
+  function resumoDoSimulador() {
+    const d = dadosDoSimulador(); if (!d) return '';
+    return '\n\nSimulei no site com os meus números: ' + d.contatos + ' interessados por mês, '
+      + 'valor médio de venda ' + moedaBR.format(d.ticket) + ', conversão de ' + d.atual + '% para '
+      + d.cenario + '%. A diferença no cenário deu ' + moedaBR.format(d.diferenca) + ' por mês.';
+  }
   function selectChallenge(value) {
     const choice = challenges[value]; if (!choice || !response || !(whatsapp instanceof HTMLAnchorElement)) return;
     response.textContent = choice.text;
-    const message = 'Olá, Raphael. Quero agendar uma conversa de diagnóstico para minha revenda de veículos. Minha prioridade é ' + choice.label + '.';
+    const nomeEl = document.getElementById('captura-nome');
+    const nome = nomeEl instanceof HTMLInputElement && nomeEl.value.trim() ? ' Aqui é o ' + nomeEl.value.trim() + '.' : '';
+    const message = 'Olá, Raphael.' + nome + ' Quero agendar uma conversa de diagnóstico para minha revenda de veículos. Minha prioridade é ' + choice.label + '.' + resumoDoSimulador();
     whatsapp.href = 'https://wa.me/5547999122932?text=' + encodeURIComponent(message);
   }
+  /** Mantem o link do WhatsApp sempre com os numeros mais recentes. */
+  function atualizarLinkContextual() {
+    if (challengeSelect instanceof HTMLSelectElement) selectChallenge(challengeSelect.value);
+  }
   if (challengeSelect instanceof HTMLSelectElement) { challengeSelect.addEventListener('change', () => selectChallenge(challengeSelect.value)); selectChallenge(challengeSelect.value); }
+
+
+  // ---- formulario de captura do simulador (liberado 25/09/2026) ----
+  const capturaForm = document.getElementById('captura-form');
+  const capturaAviso = document.getElementById('captura-aviso');
+  if (capturaForm instanceof HTMLFormElement) {
+    capturaForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const nome = /** @type {HTMLInputElement|null} */(document.getElementById('captura-nome'));
+      const zap  = /** @type {HTMLInputElement|null} */(document.getElementById('captura-whatsapp'));
+      if (!nome || !zap || !capturaAviso) return;
+      const so = zap.value.replace(/\D/g, '');
+      if (nome.value.trim().length < 2) { capturaAviso.textContent = 'Escreva seu nome, por favor.'; return; }
+      if (so.length < 10 || so.length > 13) { capturaAviso.textContent = 'Confira o WhatsApp com DDD.'; return; }
+      const d = dadosDoSimulador();
+      const desafio = challengeSelect instanceof HTMLSelectElement ? challengeSelect.value : '';
+      capturaAviso.textContent = 'Enviando…';
+      let ok = false;
+      if (CAPTURA_ENDPOINT) {
+        try {
+          const r = await fetch(CAPTURA_ENDPOINT, {method:'POST', headers:{'Accept':'application/json'},
+            body: new URLSearchParams({nome:nome.value.trim(), whatsapp:so, desafio,
+              interessados:String(d?.contatos ?? ''), ticket:String(d?.ticket ?? ''),
+              conversao_atual:String(d?.atual ?? ''), conversao_cenario:String(d?.cenario ?? ''),
+              diferenca_mes:String(Math.round(d?.diferenca ?? 0)), origem:'simulador bergeros.com.br'})});
+          ok = r.ok;
+        } catch (e) { ok = false; }
+      }
+      atualizarLinkContextual();
+      capturaAviso.textContent = ok
+        ? 'Recebido. O Raphael vai te chamar. Se preferir, abra a conversa agora pelo botão abaixo.'
+        : 'Seus números estão prontos na mensagem. Toque no botão abaixo pra abrir o WhatsApp.';
+      const alvo = document.getElementById('diagnostico');
+      if (alvo) alvo.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    ['captura-nome'].forEach(id => document.getElementById(id)?.addEventListener('input', atualizarLinkContextual));
+  }
 
   const revenueForm = document.getElementById('revenue-form');
   const revenueInputs = ['monthly-contacts','current-conversion','scenario-conversion','average-sale'].map(id => document.getElementById(id));
@@ -148,6 +212,7 @@
       for(const [id,value] of [['bar-current',result.currentRevenue],['bar-scenario',result.scenarioRevenue]]) {const bar=document.getElementById(String(id));if(bar)bar.style.width=String(Number(value)/max*100)+'%';}
       if(slider instanceof HTMLInputElement){slider.value=String(values[2]);slider.setAttribute('aria-valuetext',number.format(values[2])+' por cento');}
       put('slider-value',number.format(values[2])+'%');
+      atualizarLinkContextual();
     } catch(cause) {
       error.textContent=cause instanceof Error?cause.message:'Confira os valores informados.';error.hidden=false;
       put('revenue-delta','Revise os dados');put('revenue-explanation','Preencha os campos para atualizar a simulação.');
