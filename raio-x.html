@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#162622">
+  <meta name="description" content="Quatro perguntas sobre o seu pátio e você vê quanto o carro parado está te custando por mês. A conta sai com os seus números, na própria tela.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="BergerOS | Consultoria de Negócios">
+  <meta property="og:title" content="Raio-X do Pátio | BergerOS">
+  <meta property="og:description" content="Seu pátio não tem carro parado. Tem dinheiro parado. Quatro perguntas e você vê quanto.">
+  <meta property="og:url" content="https://www.bergeros.com.br/raio-x.html">
+  <meta property="og:image" content="https://www.bergeros.com.br/assets/brand/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Raio-X do Pátio | BergerOS</title>
+  <link rel="preload" href="assets/fonts/Inter-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Inter-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="landing.css">
+  <script src="raio-x.js" defer></script>
+  <style>
+    .rx-hero{padding-block:72px 48px}
+    .rx-hero h1 em{font-style:normal;color:var(--green)}
+    .rx-lead{max-width:62ch;margin-top:26px;font-size:18px}
+    .rx-grid{display:grid;gap:34px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+    @media (max-width:900px){.rx-grid{grid-template-columns:minmax(0,1fr)}}
+    .rx-card{background:var(--white);border:1px solid var(--line);border-radius:3px;padding:30px}
+    .rx-card h2{font-size:27px;letter-spacing:-.04em}
+    .rx-field{margin-top:22px}
+    .rx-field label{display:block;font-size:14px;font-weight:600;color:var(--ink);line-height:1.45}
+    .rx-field .rx-help{display:block;margin-top:5px;font-size:12.5px;color:var(--muted);line-height:1.5}
+    .rx-field input,.rx-field select{margin-top:9px;width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:3px;font:inherit;color:var(--ink);background:var(--paper)}
+    .rx-field input:focus,.rx-field select:focus{outline:3px solid var(--green);outline-offset:2px}
+    .rx-reset{margin-top:24px}
+    .rx-out{margin-top:0}
+    .rx-out .rx-big{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}
+    .rx-out .rx-big:first-of-type{border-top:0;padding-top:0;margin-top:22px}
+    .rx-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:600;color:var(--green);line-height:1.5}
+    .rx-num{display:block;margin-top:7px;font-size:clamp(32px,4.4vw,46px);line-height:1.08;letter-spacing:-.055em;font-weight:500;color:var(--ink)}
+    .rx-sub{margin-top:7px;font-size:13.5px;line-height:1.6}
+    .rx-punch{margin-top:26px;padding:20px;background:var(--mint);border-radius:3px;color:var(--ink);font-size:16px;line-height:1.55}
+    .rx-note{margin-top:20px;font-size:12.5px;line-height:1.6}
+    .rx-cta{margin-top:26px}
+    .rx-how summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--ink);padding:14px 0}
+    .rx-how{border-top:1px solid var(--line);margin-top:34px}
+    .rx-how p{font-size:13.5px;margin-bottom:14px}
+    .rx-how code{font-size:12.5px;background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:2px 6px}
+    .rx-erro{margin-top:18px;font-size:13.5px;color:#8a2a1f;min-height:1.2em}
+    .rx-back{margin-top:16px}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header"><div class="container header-inner">
+    <a class="wordmark" href="index.html" aria-label="BergerOS, Consultoria de Negócios"><img src="assets/brand/berger-wordmark.svg" alt="BergerOS"><span>Consultoria<br>de Negócios</span></a>
+    <nav aria-label="Navegação principal"><a href="index.html#oferta">O que entregamos</a><a href="index.html#raphael">Raphael Berger</a><a class="button button-small" href="https://wa.me/5547999122932" target="_blank" rel="noopener noreferrer">Falar com Raphael <span aria-hidden="true">→</span></a></nav>
+  </div></header>
+
+  <main id="conteudo">
+
+    <section class="section rx-hero container">
+      <p class="eyebrow">Raio-X do Pátio</p>
+      <h1>Seu pátio não tem carro parado.<br><em>Tem dinheiro parado.</em></h1>
+      <p class="rx-lead">Quatro perguntas sobre a sua loja e você vê quanto. A conta aparece aqui mesmo,
+      com os seus números — não com média de mercado.</p>
+    </section>
+
+    <section class="section container" style="padding-top:0" aria-labelledby="rx-titulo">
+      <div class="rx-grid">
+
+        <form class="rx-card" id="rx-form" novalidate>
+          <h2 id="rx-titulo">Os números do seu pátio</h2>
+
+          <div class="rx-field">
+            <label for="rx-total">Quantos carros você tem hoje no pátio?</label>
+            <span class="rx-help" id="rx-total-help">Estoque próprio, contando o que está à venda agora.</span>
+            <input type="number" id="rx-total" inputmode="numeric" min="1" max="2000" step="1" value="40" aria-describedby="rx-total-help">
+          </div>
+
+          <div class="rx-field">
+            <label for="rx-parados">Desses, quantos estão parados há mais de 90 dias?</label>
+            <span class="rx-help" id="rx-parados-help">Entraram no pátio e ainda não giraram.</span>
+            <input type="number" id="rx-parados" inputmode="numeric" min="0" max="2000" step="1" value="9" aria-describedby="rx-parados-help">
+          </div>
+
+          <div class="rx-field">
+            <label for="rx-valor">Quanto você pagou, em média, por um desses carros parados? (R$)</label>
+            <span class="rx-help" id="rx-valor-help">O que saiu do seu caixa na compra, não o preço de venda.</span>
+            <input type="number" id="rx-valor" inputmode="numeric" min="0" max="2000000" step="500" value="45000" aria-describedby="rx-valor-help">
+          </div>
+
+          <div class="rx-field">
+            <label for="rx-taxa">Quanto te custa por mês manter um carro parado?</label>
+            <span class="rx-help" id="rx-taxa-help">Juros do dinheiro preso nele, seguro, IPVA proporcional e o espaço que ele ocupa no pátio.</span>
+            <select id="rx-taxa" aria-describedby="rx-taxa-help">
+              <option value="0.01">Perto de 1% do valor do carro por mês</option>
+              <option value="0.015" selected>Perto de 1,5% por mês — ou não sei dizer</option>
+              <option value="0.02">Perto de 2% por mês</option>
+              <option value="0.03">3% ou mais por mês</option>
+            </select>
+          </div>
+
+          <p class="rx-erro" id="rx-erro" role="status" aria-live="polite"></p>
+
+          <div class="rx-reset">
+            <button class="text-link" type="button" id="rx-reset">Restaurar exemplo <span aria-hidden="true">↻</span></button>
+            <span class="rx-help">Os campos vêm com valores de exemplo. Troque pelos seus.</span>
+          </div>
+        </form>
+
+        <div class="rx-card rx-out" aria-live="polite">
+          <h2>O que a conta mostra</h2>
+
+          <noscript><p class="rx-sub">Ative o JavaScript para ver a conta. A fórmula é:
+          carros parados × valor médio de compra × a taxa que você marcar. Para os 90 dias,
+          multiplicado por 3.</p></noscript>
+
+          <div class="rx-big">
+            <p class="rx-kicker">Dinheiro seu, parado no pátio</p>
+            <strong class="rx-num" id="rx-capital">R$ 405.000</strong>
+            <p class="rx-sub" id="rx-capital-sub">9 carros a R$ 45.000 de média.</p>
+          </div>
+
+          <div class="rx-big">
+            <p class="rx-kicker">O que esse dinheiro te custa por mês</p>
+            <strong class="rx-num" id="rx-mes">R$ 6.075</strong>
+            <p class="rx-sub" id="rx-mes-sub">Dá cerca de R$ 675 por mês em cada um desses carros.</p>
+          </div>
+
+          <div class="rx-big">
+            <p class="rx-kicker">O que já custou nos últimos 90 dias</p>
+            <strong class="rx-num" id="rx-90">R$ 18.225</strong>
+            <p class="rx-sub" id="rx-90-sub">Três meses ao mesmo custo por mês.</p>
+          </div>
+
+          <p class="rx-punch">Esse valor não sai do lucro do carro parado.
+          <strong>Sai da margem dos carros que você vende.</strong></p>
+
+          <p class="rx-note" id="rx-aviso">A conta usou a taxa que você marcou. Como você deixou
+          1,5%, esse número é <strong>referência de mercado, não a conta da sua loja</strong> — na
+          conversa a gente usa o seu.</p>
+
+          <p class="rx-note">É custo de carregar o estoque, não prejuízo fechado: o carro continua
+          valendo o que vale na hora da venda. A conta não desconta preparação, tributos nem
+          despesa da loja, e não mede uma perda comprovada.</p>
+
+          <div class="rx-cta">
+            <a class="button" id="rx-whats" href="https://wa.me/5547999122932" target="_blank" rel="noopener noreferrer">Mandar essa conta pro Raphael <span aria-hidden="true">→</span></a>
+            <p class="rx-note">Abre o WhatsApp com os seus números já escritos na mensagem. Você lê
+            antes de enviar.</p>
+          </div>
+        </div>
+      </div>
+
+      <details class="rx-how container" style="width:auto">
+        <summary>Como a conta funciona</summary>
+        <p><strong>Dinheiro parado</strong> = carros parados há mais de 90 dias × o que você pagou
+        em média por um deles.</p>
+        <p><strong>Custo por mês</strong> = esse dinheiro parado × a taxa que você marcou.</p>
+        <p><strong>Custo nos 90 dias</strong> = o custo por mês × 3.</p>
+        <p>A taxa junta quatro coisas que correm todo mês com o carro no pátio: o juro do dinheiro
+        preso nele, o seguro, o IPVA proporcional e o espaço que ele ocupa. Quem sabe a própria taxa
+        marca a sua; quem não sabe fica com <code>1,5% ao mês</code>, que é referência de mercado e
+        está declarada como tal no resultado.</p>
+        <p>São premissas suas, não previsão nem promessa. Giro de estoque depende de preço, procura,
+        crédito do comprador e de como a loja atende quem chega.</p>
+      </details>
+
+      <p class="rx-back"><a class="text-link" href="index.html">Voltar para o site <span aria-hidden="true">→</span></a></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer container"><a class="wordmark" href="index.html" aria-label="BergerOS, Consultoria de Negócios"><img src="assets/brand/berger-wordmark.svg" alt="BergerOS"><span>Consultoria<br>de Negócios</span></a><div><a href="https://wa.me/5547999122932" target="_blank" rel="noopener noreferrer">WhatsApp 47 9912-2932 ↗</a><p>Raphael Berger · Itajaí, Santa Catarina</p></div></footer>
+</body>
+</html>
