@@ -151,6 +151,8 @@
     if (challengeSelect instanceof HTMLSelectElement) selectChallenge(challengeSelect.value);
   }
   if (challengeSelect instanceof HTMLSelectElement) { challengeSelect.addEventListener('change', () => selectChallenge(challengeSelect.value)); selectChallenge(challengeSelect.value); }
+  // Meta Pixel (17/10/2026): Lead = clique pra abrir o WhatsApp do diagnóstico. Nenhum dado pessoal vai pra Meta.
+  whatsapp?.addEventListener('click', () => { try { window.fbq?.('track', 'Lead', {content_name: 'diagnostico-home'}); } catch (e) { /* bloqueado */ } });
 
 
   // ---- formulario de captura do simulador (liberado 25/09/2026) ----

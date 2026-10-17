@@ -119,5 +119,14 @@
     campos.total?.focus();
   });
 
+  // Meta Pixel (17/10/2026): nenhum número da loja vai pra Meta, só o nome do passo.
+  const px = (/** @type {any[]} */ ...a) => { try { /** @type {any} */ (window).fbq?.(...a); } catch (_) { /* bloqueado */ } };
+  px('track', 'ViewContent', {content_name: 'raio-x-patio'});
+  let calculado = false;
+  Object.values(campos).forEach(c => c?.addEventListener('change', () => {
+    if (!calculado && !saida.erro?.textContent) { calculado = true; px('trackCustom', 'RaioXCalculado'); }
+  }));
+  saida.whats?.addEventListener('click', () => px('track', 'Lead', {content_name: 'raio-x'}));
+
   render();
 })();
